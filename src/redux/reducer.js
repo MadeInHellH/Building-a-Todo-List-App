@@ -7,13 +7,17 @@ const addTodoReducer = createSlice ({
     initialState,
     reducers:{
         //here we will our reduce
-        //Addin todos
+        //Adding todos
         addTodos:(state,action) => {
             state.push(action.payload);
             return state;
         },
+        //  remove todos
+         removeTodos: (state, action) => {
+             return state.filter((item) => item.id !== action.payload);
+         },
     },
 });
 
-export const { addTodos } = addTodoReducer.actions;
+export const { addTodos, removeTodos } = addTodoReducer.actions;
 export const reducer = addTodoReducer.reducer;
