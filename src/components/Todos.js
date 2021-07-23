@@ -18,7 +18,9 @@ const mapDispatchToProps = (dispatch) => {
 const Todos = (props) => {
  const [todo,setTodo] = useState("")
 
-    const handleChange = (e) =>{
+ const inputRef = useRef(true);
+
+ const handleChange = (e) =>{
         setTodo(e.target.value);
     };
     console.log("props from store", props);  
@@ -45,10 +47,19 @@ const Todos = (props) => {
 
             <ul>
                 {
-                    props.todos.map(item => {
+                 props.todos.map(item => {
                         return <li key={item.id}>
-                                {item.item}{" "} 
-                                <button onClick={() => props.removeTodo(item.id)}>Delete</button></li>
+                                <textarea 
+                                  ref={inputRef} 
+                                  disabled={inputRef}
+                                  defaultValue={item.item}
+                                  />
+                               
+                                <button>Edit</button> 
+                                <button onClick={() => props.removeTodo(item.id)}>
+                                    Delete
+                                </button>{" "}
+                                </li>
                     })
                 }    
             </ul>  
