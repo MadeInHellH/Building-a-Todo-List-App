@@ -7,6 +7,7 @@ import {
     updateTodos 
 } from "../redux/reducer";
 
+
 const mapStateToProps = (state) => {
     return {
         todos: state,
