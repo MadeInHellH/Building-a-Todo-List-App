@@ -6,6 +6,7 @@ import {
     removeTodos, 
     updateTodos 
 } from "../redux/reducer";
+import {GoPlus} from "react-icons/go";
 
 
 const mapStateToProps = (state) => {
@@ -48,7 +49,7 @@ const Todos = (props) => {
             })
             }
             >
-                Add
+             <GoPlus/>
             </button>
             <br/> 
         </div>
