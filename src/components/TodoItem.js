@@ -30,8 +30,17 @@ const TodoItem = (props) => {
             />
         <div className="btns">    
         <button onClick={() => changeFocus()}><AiFillEdit /></button>
-        <button onClick={() => completeTodo(item.id)}><IoCheckmarkDoneSharp /></button>  
-        <button onClick={() => removeTodo(item.id)}><IoClose /></button>{" "}
+        
+        <button 
+        style={{color:"green"}} 
+        onClick={() => completeTodo(item.id)}>
+        <IoCheckmarkDoneSharp />
+        </button>  
+        <button 
+        style={{color:"red"}} 
+        onClick={() => removeTodo(item.id)}>
+        <IoClose />
+        </button>{" "}
         </div>
         {item.completed && <span className="completed"> </span>}
          </li>
